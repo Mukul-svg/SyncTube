@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <link rel="stylesheet" href="style.css">
+      <title>SyncTube</title>
+    </head>
+  <body>
+
+    <h1>SyncTube</h1>
+    <!-- Form for adding the video -->
+    <form id="form">
+        <input type="url" id="url" placeholder="Enter Youtube URL" required>
+        <button>Add Video</button>
+    </form>
+
+    <!-- Video Player Container -->
+    <div id="player-container">
+        <div id="player"></div>
+    </div>
+
+    <!-- Slider to change Duration -->
+    <label for="YouTube-player-progress">Duration</label>
+    <input id="YouTube-player-progress" type="range" value="0" min="0" max="100"
+    onchange="timeChange(this.value);" oninput="timeSlide();">
+
+    <!-- Slider to change Volume -->
+    <label for="YouTube-player-volume">Volume</label>
+    <input id="YouTube-player-volume" type="range" value="50" min="0" max="100"
+    onchange="volumeChange(this.value);">
+
+    <!-- Buttons to play and pause video -->
+    <button onclick="startVideo()">Play</button>
+    <button onclick="pauseVideo()">Pause</button>
+
+  </body>
+  <script src="https://www.youtube.com/iframe_api"></script>
+  <script defer src = "http://localhost:3000/socket.io/socket.io.js"></script>
+  <script defer src="script.js"></script>
+
+</html>
